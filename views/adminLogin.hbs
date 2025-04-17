@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://w0.peakpx.com/wallpaper/488/112/HD-wallpaper-the-batman-red-theme-dope.jpg') no-repeat center center/cover;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      text-align: left;
+      color: #fff;
+      margin-bottom: -10px;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      outline: none;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #98a1af;
+    }
+
+    .error-message {
+      margin-top: 15px;
+      color: #b00020;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Login</h1>
+    <form action="/admin/login" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" placeholder="Username" id="username" name="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" placeholder="Password" id="password" name="password" required />
+
+
+
+      <button type="submit">Login</button>
+<a style="color: rgb(240, 240, 248);" href="/admin/login">Dont have an account? Register</a>
+      {{#if errorMessage}}
+        <div class="error-message">
+          {{errorMessage}}
+        </div>
+      {{/if}}
+    </form>
+  </div>
+</body>
+</html>
