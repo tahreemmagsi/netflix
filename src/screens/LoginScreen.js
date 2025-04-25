@@ -14,8 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const handleLogin = () => {
-    // Add login logic here
-    console.log('Login Pressed');
+    navigation.navigate('BottomTabNav');
   };
   const navigation = useNavigation();
 
